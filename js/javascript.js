@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector("#gridContainer");
 const gridButton = document.querySelector("#gridButton");
+const eraseButton = document.querySelector("#eraseButton");
 const defaultGridSize = 16;
 
 let isPointerDown = false;
@@ -10,6 +11,7 @@ document.addEventListener("pointerleave", () => (isPointerDown = false));
 
 window.addEventListener("load", () => createGrid(defaultGridSize));
 gridButton.addEventListener("click", changeSize);
+eraseButton.addEventListener("click", eraseGrid);
 
 function createGrid(size) {
   gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -53,3 +55,11 @@ function changeSize(){
   }
   createGrid(customSize);
 }
+
+function eraseGrid(){
+  const cells = gridContainer.querySelectorAll(".grid-cell");
+  cells.forEach(cell => {
+    cell.style.backgroundColor = "";
+    cell.style.borderColor = "";
+  });
+};
