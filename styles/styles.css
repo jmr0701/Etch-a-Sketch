@@ -1,3 +1,29 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  text-align: center;
+  background-color: rgba(250, 215, 102, 0.836);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls{
+  background-color: rgba(255, 0, 0, 0.856);
+  border: 8px solid black;
+  width: 50vw;
+  border-radius: 20px;
+}
+
 .grid {
   display: grid;
   max-width: 500px;
@@ -10,4 +36,25 @@
 .grid-cell {
   border: 1px solid #666;
   background-color: white;
+}
+
+#buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#gridButton, #eraseButton {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+#gridButton{
+  margin-left: 18px;
+}
+
+#eraseButton {
+  margin-right: 18px;
 }
