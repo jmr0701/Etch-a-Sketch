@@ -2,6 +2,12 @@ const gridContainer = document.querySelector("#gridContainer");
 const gridButton = document.querySelector("#gridButton");
 const defaultGridSize = 16;
 
+let isPointerDown = false;
+document.addEventListener("pointerdown", () => (isPointerDown = true));
+document.addEventListener("pointerup", () => (isPointerDown = false));
+document.addEventListener("pointercancel", () => (isPointerDown = false));
+document.addEventListener("pointerleave", () => (isPointerDown = false));
+
 window.addEventListener("load", () => createGrid(defaultGridSize));
 gridButton.addEventListener("click", changeSize);
 
