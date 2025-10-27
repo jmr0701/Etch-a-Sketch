@@ -1,7 +1,9 @@
 const gridContainer = document.querySelector("#gridContainer");
+const gridButton = document.querySelector("#gridButton");
 const defaultGridSize = 16;
 
 window.addEventListener("load", () => createGrid(defaultGridSize));
+gridButton.addEventListener("click", changeSize);
 
 function createGrid(size) {
   gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -28,4 +30,20 @@ function createGrid(size) {
     });
     gridContainer.appendChild(gridCell);
   }
+}
+
+function changeSize(){
+  let input = prompt("Select your custom size. (1-100)");
+
+  if (input === null) return;
+  if (input > 100 || input < 1) {
+    alert("Please enter a valid number. (1-100)");
+    return;
+  }
+  const customSize = parseInt(input, 10);
+  if (Number.isNaN(customSize)) {
+    alert("Please enter a valid number.");
+    return;
+  }
+  createGrid(customSize);
 }
