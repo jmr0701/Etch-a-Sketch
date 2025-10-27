@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  max-width: 500px;
+  min-height: 500px;
+  margin: 0 auto;
+  margin-top: 70px;
+  border: 1px solid black;
+}
+
+.grid-cell {
+  border: 1px solid #666;
+  background-color: white;
+}
